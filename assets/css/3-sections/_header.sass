@@ -1,0 +1,114 @@
+.home-wrap header
+  // background: pink
+  width: 95%
+  box-sizing: border-box
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+
+  h1.logo
+    +hide-text
+    background:
+      image: url(../img/excellence-logo.png)
+      repeat: no-repeat
+      size: contain
+      position: left center
+    width: 12%
+    margin: 0 8% 0 0
+
+  .site-nav
+    width: 80%
+
+  ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+  .main-menu
+    display: flex
+    justify-content: space-between
+    position: relative
+
+    a
+      color: #555
+
+  .drop-down
+    >a
+      display: inline-block
+      font-size: 21px
+      margin: 0.80em 1.175em
+
+    &:first-child > a
+      margin-left: 0
+
+    &:last-child > a
+      margin-right: 0
+
+    &:first-child
+      margin-left: 0
+
+      .sub-menu
+        // display: flex
+
+    &:last-child
+      margin-right: 0
+
+  .sub-menu
+    display: none
+    position: absolute
+    width: 51%
+    top: 90%
+    padding: 15px 15px 25px
+    background: white
+    flex-wrap: wrap
+    box-shadow: 0px 4px 12px rgba(black, 0.3)
+
+    li
+      width: 50%
+      margin-bottom: 15px
+
+    a
+      font-size: 15px
+      color: #003262
+      font-weight: 700
+
+
+
+  .mobile-nav-toggle
+    display: none
+    span, span:before, span:after
+      content: ""
+      display: block
+      width: 45px
+      height: 2px
+      background: #333
+      position: relative
+
+    span:before
+      top: -12px
+
+    span:after
+      top: 10px
+
+
+
+
+
+
+  @media (max-width: 972px)
+    .drop-down
+      >a
+        font-size: 18px
+
+  @media (max-width: 834px)
+    .drop-down
+      >a
+        font-size: 16px
+
+  @media (max-width: 752px)
+    .site-nav
+      display: none
+    .mobile-nav-toggle
+      display: block
