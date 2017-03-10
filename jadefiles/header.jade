@@ -1,51 +1,32 @@
+mixin nav-content(content)
+  li.drop-down: a(href="#")= content
+    span.caret
+    ul.sub-menu
+      li: a(href="#") Overview
+      li: a(href="#") History and Discoveries
+      li: a(href="#") Traditions
+      li: a(href="#") Experience Berkeley
+      li: a(href="#") Visit
+      
+//- .mobile-nav
+//-   ul.main-menu
+//-     +nav-content('About')
+//-     +nav-content('Admissions')
+//-     +nav-content('Academics')
+//-     +nav-content('Research')
+//-     +nav-content('Campus Life')
+
+      
 header
   h1.logo Excellece College of Science
   
   nav.site-nav
     ul.main-menu
-      li.drop-down: a(href="#") About
-        span.caret
-        ul.sub-menu
-          li: a(href="#") Overview
-          li: a(href="#") History and Discoveries
-          li: a(href="#") Traditions
-          li: a(href="#") Experience Berkeley
-          li: a(href="#") Visit
-          
-      li.drop-down: a(href="#") Admissions
-        span.caret
-        ul.sub-menu
-          li: a(href="#") Overview
-          li: a(href="#") History and Discoveries
-          li: a(href="#") Traditions
-          li: a(href="#") Experience Berkeley
-          li: a(href="#") Visit
-          
-      li.drop-down: a(href="#") Academics
-        span.caret
-        ul.sub-menu
-          li: a(href="#") Overview
-          li: a(href="#") History and Discoveries
-          li: a(href="#") Traditions
-          li: a(href="#") Experience Berkeley
-          li: a(href="#") Visit
-          
-      li.drop-down: a(href="#") Research
-        span.caret
-        ul.sub-menu
-          li: a(href="#") Overview
-          li: a(href="#") History and Discoveries
-          li: a(href="#") Traditions
-          li: a(href="#") Experience Berkeley
-          li: a(href="#") Visit
-          
-      li.drop-down: a(href="#") Campus Life
-        span.caret
-        ul.sub-menu
-          li: a(href="#") Overview
-          li: a(href="#") History and Discoveries
-          li: a(href="#") Traditions
-          li: a(href="#") Experience Berkeley
-          li: a(href="#") Visit
+      +nav-content('About')
+      +nav-content('Admissions')
+      +nav-content('Academics')
+      +nav-content('Research')
+      +nav-content('Campus Life')
+      
   
   .mobile-nav-toggle: span
