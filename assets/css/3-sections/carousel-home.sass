@@ -1,0 +1,64 @@
+section.carousel
+  height: calc(100vh - 100px)
+  overflow: hidden
+  position: relative
+  background:
+    image: url(../img/carousel-images/ca-1.jpg)
+    repeat: no-repeat
+    size: cover
+    position: center top
+
+  .carousel-inner
+    width: 600%
+
+    .carousel-slide
+      width: calc(100%/6)
+      float: left
+      background:
+        repeat: no-repeat
+        size: cover
+        position: center top
+
+  .carousel-inner, .carousel-slide
+    height: 100%
+
+  .caro-button
+    width: 64px
+    height: 64px
+    border-radius: 50%
+    background: rgba(white, 0.3)
+    position: absolute
+    top: 50%
+    margin-top: -20px
+    cursor: pointer
+    transition: all 300ms ease-in-out
+
+    &:hover
+      background: rgba(white, 0.5)
+
+
+    span
+      display: inline-block
+      position: absolute
+      top: 50%
+      margin-top: -15%
+      width: 30%
+      height: 30%
+      border-top: 2px solid grey
+
+    &.prev
+      left: 10px
+
+      span
+        border-left: 2px solid grey
+        transform: rotate(-45deg)
+        left: 40%
+
+
+    &.next
+      right: 10px
+
+      span
+        border-right: 2px solid grey
+        transform: rotate(45deg)
+        right: 40%

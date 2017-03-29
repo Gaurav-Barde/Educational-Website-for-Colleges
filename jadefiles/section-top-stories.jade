@@ -1,0 +1,26 @@
+mixin storyArticle(img, title, desc)
+  article
+    img(src=img, alt="Article Image")
+    .desc-wrap
+      h3.title= title
+      p.desc= desc
+
+
+section.top-stories
+  h1.home-lead Top Stories
+  hr
+  .articles-wrapper
+    +storyArticle('assets/img/top-story/ts-4.jpg', 'Plant Discovery', 'Excellence scientists use computer vision technique to help doctors prepare for surgery.')
+    
+    +storyArticle('assets/img/top-story/ts-2.jpg', 'Medical Discovery', 'Excellence scientists use computer vision technique to help doctors prepare for surgery.')
+      
+    +storyArticle('assets/img/top-story/ts-3.jpg', 'Space Discovery', 'Excellence scientists use computer vision technique to help doctors prepare for surgery.') 
+     
+    .more-headlines
+      h1.title More Headlines
+      ul.article-list
+        li: a(href="#") Insider threats in high-security organizations are often ignored.
+        li: a(href="#") Immigration resources and travel guidance for the Stanford community.
+        li: a(href="#") Seeing Deeper: An Interview with Lihong Wang.
+        
+        li: a(href="#") More

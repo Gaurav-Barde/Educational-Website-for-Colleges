@@ -10,6 +10,14 @@
 
 @import "1-base/base";
 
-@import "3-sections/_header";
+@import "3-sections/header";
+
+@import "3-sections/carousel-home.sass";
+
+@import "3-sections/topstories-home.sass";
+
+@import "3-sections/activities-home.sass";
+
+@import "3-sections/footer";
 
 @import "4-layouts/home";

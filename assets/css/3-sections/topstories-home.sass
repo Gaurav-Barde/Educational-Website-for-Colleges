@@ -1,0 +1,64 @@
+section.top-stories
+  color: #003262
+
+  .articles-wrapper
+    display: flex
+    justify-content: space-between
+
+  article, .more-headlines
+    width: 270px
+    margin-right: 20px
+
+    &:last-child
+      margin-right: 0
+
+    img
+      width: 100%
+      height: 170
+
+  .more-headlines
+    height: auto
+
+    h1
+      font-size: 14px
+      font-weight: 700
+      margin: 0
+      text-transform: uppercase
+
+
+
+  @media (max-width: 800px)
+    padding: 0 20px
+
+    .articles-wrapper
+      display: block
+
+    article
+      width: 100%
+      height: 100px
+      margin-right: 0
+      margin-bottom: 30px
+      display: flex
+
+      img
+        max-width: 150px
+
+      .desc-wrap
+        margin-left: 20px
+
+
+  @media(max-width: 993px)
+    .title
+      font-size: 14px
+    .desc
+      font-size: 13px
+
+  @media (max-width: 500px)
+    article
+      img
+        max-width: 100px
+        max-height: 100px
+
+  @media (max-width: 320px)
+    article
+      margin-bottom: 40px
