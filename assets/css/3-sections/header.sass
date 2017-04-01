@@ -20,6 +20,9 @@
     max-width: 150px
     margin: 0
     float: left
+    position: relative
+    z-index: 10
+    cursor: pointer
 
   .site-nav
     float: right
@@ -36,35 +39,34 @@
 
   .drop-down
     position: relative
+    font-size: 21px
+    margin: 0.80em 1.175em
+    border-bottom: 2px solid transparent
+    cursor: pointer
+    border-bottom: 2px solid transparent
+    +transition
 
-    &:hover .sub-menu
+    &.is-open .sub-menu
       display: block
 
-    &:hover >a
+    &.is-open, &:hover
       border-color: lighten(#003262, 20%)
       color: lighten(#003262, 20%)
-
-    >a
-      display: inline-block
-      font-size: 21px
-      margin: 0.80em 1.175em
-      border-bottom: 2px solid transparent
-      +transition
-
-    &:first-child > a
-      margin-left: 0
-
-    &:last-child > a
-      margin-right: 0
 
     &:first-child
       margin-left: 0
 
-      &:hover .sub-menu
-        left: -25px
-
     &:last-child
       margin-right: 0
+
+      .sub-menu
+        right: 0
+
+        @media(max-width: 1282px)
+          left: -45px
+
+        @media(max-width: 1282px)
+          left: -65px
 
 
 
@@ -74,17 +76,16 @@
     display: none
     position: absolute
     width: 180px
-    top: 100%
+    top: 106%
+    left: 0
     padding: 10px
     background: white
     text-align: left
     box-shadow: 0px 4px 12px rgba(black, 0.3)
+    z-index: 5
     pointer-events: none
 
-    @media (max-width: 920px)
-      &:last-child
-        left: -40px
-        right: 0
+
 
     li
       margin-bottom: 5px
@@ -102,6 +103,15 @@
 
   .mobile-nav-toggle
     display: none
+    width: 45px
+    height: 28px
+    position: absolute
+    z-index: 10
+    top: 50%
+    right: 10px
+    margin-top: -10px
+    cursor: pointer
+
     span, span:before, span:after
       content: ""
       display: block
@@ -109,9 +119,10 @@
       height: 2px
       background: #333
       position: relative
+      left: 0
 
     span:before
-      top: -12px
+      top: 24px
 
     span:after
       top: 10px
@@ -121,8 +132,7 @@
       padding-top: 2px
 
     .drop-down
-      >a
-        font-size: 18px
+      font-size: 18px
 
   @media (min-width: 768px) and (max-width: 992px)
     width: 750px
@@ -131,8 +141,7 @@
       padding-top: 4px
 
     .drop-down
-      >a
-        font-size: 16px
+      font-size: 16px
 
   @media (max-width: 768px)
     h1.logo
@@ -141,9 +150,16 @@
     .site-nav
       float: none
       position: absolute
+      left: 0
       width: 100vw
       margin-top: 50px
-      text-align: center
+      z-index: 5
+      background: white
+      transform: translateY(-150%)
+      transition: transform 300ms ease-in-out
+
+      &.is-open
+        transform: translateY(3%)
 
       .main-menu
         display: block
@@ -153,15 +169,14 @@
       .drop-down
         border-bottom: 1px solid #EEE
 
+        &:first-child
+          margin-left: 1.175em
+
       a
         margin: 0 0 10px
 
     .mobile-nav-toggle
       display: block
-      position: absolute
-      right: 10px
-      top: 50%
-      margin-top: -1px
 
     .sub-menu
       position: relative
@@ -169,7 +184,6 @@
       top: auto
       right: auto
       left: auto !important
-      text-align: center
       padding: 0
       box-sizing: border-box
       box-shadow: none

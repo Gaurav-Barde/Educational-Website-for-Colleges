@@ -3,31 +3,32 @@ mixin socialMed(icon, site)
 
 footer.home-footer
   .foot-wrapper
+    .flex
+      h1.logo Excellence
       ul.soc-links
         +socialMed('background-image: url(assets/img/soc-med/fb.svg)', 'facebook')
         +socialMed('background-image: url(assets/img/soc-med/twit.svg)', 'twitter')
         +socialMed('background-image: url(assets/img/soc-med/yt.svg)', 'YouTube')
         +socialMed('background-image: url(assets/img/soc-med/inst.svg)', 'Instagram')
         +socialMed('background-image: url(assets/img/soc-med/snc.svg)', 'SnapChat')
-        
-        
-      ul.ad-links
-        li Admission
-        li: a(href="#") Undergratuate
-        li: a(href="#") Gratuate
-        li: a(href="#") Finacial Aid
-        
-        
-      ul.abt-links
-        li About Excellence
-        li: a(href="#") Facts
-        li: a(href="#") History
-        li: a(href="#") Accreditation
       
-      ul.res-links
-        li Resources
-        li: a(href="#") A - Z Index
-        li: a(href="#") Campus Map
-        li: a(href="#") Directory
+      
+    ul.ad-links
+      li Admission
+      li: a(href="#") Undergratuate
+      li: a(href="#") Gratuate
+      li: a(href="#") Finacial Aid
+      
+      
+    ul.abt-links
+      li About Excellence
+      li: a(href="#") Facts
+      li: a(href="#") History
+      li: a(href="#") Accreditation
     
+    ul.res-links
+      li Resources
+      li: a(href="#") A - Z Index
+      li: a(href="#") Campus Map
+      li: a(href="#") Directory
   

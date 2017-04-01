@@ -1,4 +1,4 @@
-// (function ($) {
+(function ($) {
 
   var $carouWrap = $('section.carousel'),
       $carouInner = $carouWrap.find('.carousel-inner'),
@@ -9,8 +9,17 @@
       $next = $carouWrap.find('.next'),
       sliderInterval,
       settings = {
-        duration : 700
+        duration : 300
       };
+
+
+  //function for opening mobile-nav
+  function mobileNavOpen () {
+
+    $('.site-nav').toggleClass('is-open');
+
+  }
+
 
   //function for auto slide show
   function slideNext () {
@@ -47,9 +56,37 @@
 
   $(document).ready(function () {
 
+    //Mobile-nav Toggle
+    $('.mobile-nav-toggle').on('click', mobileNavOpen);
+
+    //Drop Down menu functionality
+    $('.drop-down').on('click', function(e) {
+
+      e.stopPropagation();
+
+
+      if($('.drop-down').hasClass('is-open')) {
+        $('.drop-down').removeClass('is-open');
+      }
+
+
+
+      $('.home-wrap').on('click', function() {
+
+        $('.drop-down').removeClass('is-open');
+
+      });
+
+      $(this).toggleClass('is-open');
+
+
+
+    });
+
+
 
     //Enabling auto scroll
-    sliderInterval = setInterval(slideNext, settings.duration * 4);
+    // sliderInterval = setInterval(slideNext, settings.duration * 4);
 
     //next button click handler
     $next.on('click', function() {
