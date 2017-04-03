@@ -9,7 +9,7 @@
       $next = $carouWrap.find('.next'),
       sliderInterval,
       settings = {
-        duration : 300
+        duration : 500
       };
 
 
@@ -21,35 +21,45 @@
   }
 
 
+  //function for toggling Drop-Down Button
+  function toggleDropDown(e) {
+
+    e.stopPropagation();
+
+    $('.home-wrap').on('click', function() {
+
+      $('.drop-down').removeClass('is-open');
+
+    });
+
+
+    $(this).toggleClass('is-open').siblings().removeClass('is-open');
+
+  }
+
+
   //function for auto slide show
   function slideNext () {
 
-    var slideWidth = $carouSlide.width();
+    $carouInner.animate({'left': '-200%'}, settings.duration, function() {  //moving the slider wrapper to the right by
 
-    if (parseInt($carouInner.css('margin-left')) <= (slideWidth * (slideLength - 1) * -1)) {
+      $carouInner.css('left', '-100%');
 
-      $carouInner.css('margin-left', '0');
+      $carouInner.children().last().after($carouInner.children().first());
 
-    }
-
-    $carouInner.animate({'margin-left': '-='+ slideWidth +''}, settings.duration);
+    });
 
   }
 
   function slidePrev () {
 
-    var slideWidth = $carouSlide.width();
+    $carouInner.animate({'left': '0%'}, settings.duration, function() {
 
-    clearInterval(sliderInterval);
+      $carouInner.css('left', '-100%');
 
-    if (parseInt($carouInner.css('margin-left')) >= 0) {
+      $carouInner.children().first().before($carouInner.children().last());
 
-      $carouInner.css('margin-left', -(slideWidth * (slideLength - 1)));
-
-    }
-
-    $carouInner.animate({'margin-left': '+='+ slideWidth +''}, settings.duration);
-
+    });
 
   }
 
@@ -59,34 +69,13 @@
     //Mobile-nav Toggle
     $('.mobile-nav-toggle').on('click', mobileNavOpen);
 
-    //Drop Down menu functionality
-    $('.drop-down').on('click', function(e) {
-
-      e.stopPropagation();
-
-
-      if($('.drop-down').hasClass('is-open')) {
-        $('.drop-down').removeClass('is-open');
-      }
-
-
-
-      $('.home-wrap').on('click', function() {
-
-        $('.drop-down').removeClass('is-open');
-
-      });
-
-      $(this).toggleClass('is-open');
-
-
-
-    });
+    //Drop Down menu Toggle
+    $('.drop-down').on('click', toggleDropDown);
 
 
 
     //Enabling auto scroll
-    // sliderInterval = setInterval(slideNext, settings.duration * 4);
+    sliderInterval = setInterval(slideNext, settings.duration * 8);
 
     //next button click handler
     $next.on('click', function() {

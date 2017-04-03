@@ -1,13 +1,14 @@
 mixin carouselSlide(bgImage)
   .carousel-slide(style=bgImage)
-
-section.carousel
+  
+section.carousel  
   .carousel-inner
     +carouselSlide('background-image: url(assets/img/carousel-images/ca-3.jpg)')
     +carouselSlide('background-image: url(assets/img/carousel-images/ca-1.jpg)')
     +carouselSlide('background-image: url(assets/img/carousel-images/ca-2.jpg)')
     +carouselSlide('background-image: url(assets/img/carousel-images/ca-4.jpg)')
     +carouselSlide('background-image: url(assets/img/carousel-images/ca-5.jpg)')
-    +carouselSlide('background-image: url(assets/img/carousel-images/ca-1.jpg)')
-  .caro-button.prev: span  
-  .caro-button.next: span  
+      
+  .button.prev
+  .button.next
+  
