@@ -2,9 +2,6 @@
 
   var $carouWrap = $('section.carousel'),
       $carouInner = $carouWrap.find('.carousel-inner'),
-      $carouSlide = $carouInner.find('.carousel-slide'),
-      slideWidth = $carouSlide.width(),
-      slideLength = $carouSlide.length,
       $prev = $carouWrap.find('.prev'),
       $next = $carouWrap.find('.next'),
       sliderInterval,
