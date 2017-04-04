@@ -704,11 +704,12 @@ section.top-stories {
       height: 170; }
   section.top-stories .more-headlines {
     height: auto; }
-    section.top-stories .more-headlines h1 {
+    section.top-stories .more-headlines .title {
       font-size: 14px;
       font-weight: 700;
       margin: 0;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      letter-spacing: 0.01em; }
   @media (max-width: 800px) {
     section.top-stories {
       padding: 0 20px; }
