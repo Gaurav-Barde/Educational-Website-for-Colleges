@@ -38,7 +38,7 @@
   //function for auto slide show
   function slideNext () {
 
-    $carouInner.animate({'left': '-200%'}, settings.duration, function() {  //moving the slider wrapper to the right by
+    $carouInner.animate({'left': '-200%'}, settings.duration - 200, function() {  //moving the slider wrapper to the right by
 
       $carouInner.css('left', '-100%');
 
@@ -50,7 +50,9 @@
 
   function slidePrev () {
 
-    $carouInner.animate({'left': '0%'}, settings.duration, function() {
+    clearInterval(sliderInterval);
+
+    $carouInner.animate({'left': '0%'}, settings.duration - 200, function() {
 
       $carouInner.css('left', '-100%');
 
