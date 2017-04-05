@@ -49,6 +49,8 @@
   }
 
   function slidePrev () {
+    
+    clearInterval(sliderInterval);
 
     $carouInner.animate({'left': '0%'}, settings.duration, function() {
 
