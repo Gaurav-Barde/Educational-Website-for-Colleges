@@ -72,6 +72,22 @@
     $('.drop-down').on('click', toggleDropDown);
 
 
+    //overlay stuff
+    $('.ovl-tgr').on('click', function() {
+
+      $('.overlay').addClass('is-open');
+
+    });
+
+
+    $('.close-btn').on('click', function() {
+
+      $('.overlay').removeClass('is-open');
+
+    });
+
+
+
 
     //Enabling auto scroll
     sliderInterval = setInterval(slideNext, settings.duration * 8);

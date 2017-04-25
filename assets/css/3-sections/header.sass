@@ -193,3 +193,89 @@
 
       li
         border: none
+
+
+
+//overlay Styles
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(lighten(#003262, 5%), 0.95)
+  color: #111
+  z-index: 50
+  display: flex
+  justify-content: center
+  align-items: center
+  perspective: 200px
+  opacity: 0
+  transition: all 200ms ease 300ms
+  pointer-events: none
+
+  &.is-open
+    opacity: 1
+    pointer-events: auto
+
+    .modal
+      transform: translate3d(0, 0%, 0)
+
+
+
+  .modal
+    max-width: 600px
+    height: 200px
+    padding: 20px
+    background: white
+    border-radius: 5px
+    transform: translate3d(0, -250%, 0)
+    display: flex
+    justify-content: center
+    flex-direction: column
+    position: relative
+    transition: all 400ms cubic-bezier(1,-0.47, 0, 1.79) 200ms
+
+    .home-lead
+      margin: 0 0 20px
+      font-size: 24px
+      font-weight: 700
+      text-align: center
+
+    p
+      margin: 5px 0
+      font-size: 16px
+      line-height: 26px
+
+      .emph
+        border-bottom: 1px dotted #111
+        display: inline-block
+        margin: 0 3px
+        color: inherit
+
+  .close-btn
+    +size(30px)
+    cursor: pointer
+    position: absolute
+    right: -25px
+    top: -30px
+
+    span, span:after
+      display: inline-block
+      width: 20px
+      height: 2px
+      background: #FFF
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-top: -1px
+      margin-left: -10px
+
+
+    span
+      transform: rotate(-45deg)
+
+    span:after
+      content: ""
+      transform: rotate(90deg)
+//
