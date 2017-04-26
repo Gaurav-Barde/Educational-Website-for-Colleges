@@ -773,7 +773,19 @@ body {
       margin-left: -15px; }
 
 section.top-stories {
-  color: #003262; }
+  color: #003262;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 300ms ease-in-out; }
+
+
+
+/* Making Elements Visible */
+section.is-active, section.activities div.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   section.top-stories .articles-wrapper {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -832,7 +844,11 @@ section.top-stories {
 section.activities .activities-wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 300ms ease-in-out;
+ }
   section.activities .activities-wrapper > div {
     margin-right: 30px;
     width: 33.33%;

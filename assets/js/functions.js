@@ -104,6 +104,22 @@
     //previous button click handler
     $prev.on('click', slidePrev);
 
+    $(window).on('scroll', function() {
+
+      var wScroll = $(this).scrollTop();
+
+      if($('.top-stories').offset().top/4 < wScroll) {
+        $('.top-stories').addClass('is-active');
+      }
+
+      if($('.activities-wrapper').offset().top/1.5 < wScroll) {
+        $('.activities-wrapper').addClass('is-active');
+      }
+
+      console.log(wScroll);
+
+    });
+
     // window resizing function
     $(window).resize(function() {
 
