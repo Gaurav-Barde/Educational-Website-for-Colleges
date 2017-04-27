@@ -49,14 +49,9 @@
   }
 
   function slidePrev () {
-    
+
     clearInterval(sliderInterval);
 
-<<<<<<< HEAD
-=======
-    clearInterval(sliderInterval);
-
->>>>>>> refs/remotes/origin/master
     $carouInner.animate({'left': '0%'}, settings.duration - 200, function() {
 
       $carouInner.css('left', '-100%');
