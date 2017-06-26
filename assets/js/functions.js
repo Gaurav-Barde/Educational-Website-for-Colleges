@@ -116,8 +116,6 @@
         $('.activities-wrapper').addClass('is-active');
       }
 
-      console.log(wScroll);
-
     });
 
     // window resizing function
