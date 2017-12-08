@@ -652,7 +652,7 @@ body {
       transform: translate3d(0, 0%, 0); }
   .overlay .modal {
     max-width: 600px;
-    height: 200px;
+    height: auto;
     padding: 20px;
     background: white;
     border-radius: 5px;
